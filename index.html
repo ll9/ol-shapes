@@ -14,11 +14,15 @@
     <h2>My Map</h2>
     <div id="map" class="map"></div>
     <div class="side-drawer">
-        
+        <button onclick="onStyleChanged('blue')">blue</button>
+        <button onclick="onStyleChanged('red')">red</button>
+        <button onclick="onStyleChanged('green')">green</button>
     </div>
 </body>
 
 
 <script src="./js/Repositories/FeatureRepository.js"></script>
+<script src="./js/Observables/StyleObservable.js"></script>
+<script src="./js/Observers/StyleObserver.js"></script>
 <script src="./js/app.js"></script>
 </html>
