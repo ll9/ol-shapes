@@ -14,9 +14,10 @@
     <h2>My Map</h2>
     <div id="map" class="map"></div>
     <div class="side-drawer">
-        <button onclick="onStyleChanged('blue')">blue</button>
-        <button onclick="onStyleChanged('red')">red</button>
-        <button onclick="onStyleChanged('green')">green</button>
+        <button onclick="onColorChange('blue')">blue</button>
+        <button onclick="onColorChange('red')">red</button>
+        <button onclick="onColorChange('green')">green</button>
+        <input oninput="onRadiusChanged(this.value)" type="range" min="1" max="100" value="50">
     </div>
 </body>
 

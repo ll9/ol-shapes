@@ -5,7 +5,8 @@
 
 class StyleObservable {
     constructor() {
-        this.state = 'marker';
+        this.color = 'blue';
+        this.radius = 5;
         /** @type {Observer[]} */
         this.observers = [];
     }
@@ -18,14 +19,19 @@ class StyleObservable {
         this.observers.push(observer);
     }
 
-    setState(newState) {
-        this.state = newState;
+    setColor(color) {
+        this.color = color;
+        this.notifyAllObservers();
+    }
+
+    setRadius(radius) {
+        this.radius = radius;
         this.notifyAllObservers();
     }
 
     notifyAllObservers() {
         for(let observer of this.observers) {
-            observer.update(this.state);
+            observer.update({color: this.color, radius: this.radius});
         }
     }
 }

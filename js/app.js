@@ -16,8 +16,12 @@ var repo = new FeatureRepository(map);
 var styleObservable = new StyleObservable();
 var styleObserver = new StyleObserver(repo.vectorLayer);
 
-function onStyleChanged(val) {
-    styleObservable.setState(val);
+function onColorChange(color) {
+    styleObservable.setColor(color);
+}
+
+function onRadiusChanged(radius) {
+    styleObservable.setRadius(radius);
 }
 
 function startup() {

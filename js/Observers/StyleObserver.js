@@ -6,6 +6,7 @@ class StyleObserver {
     constructor(layer) {
         this.layer = layer;
         this.color = 'blue'
+        this.radius = 5;
         this.initialize();
     }
 
@@ -21,7 +22,7 @@ class StyleObserver {
         console.log(this.color);
         return new ol.style.Style({
             image: new ol.style.Circle({
-                radius: 10,
+                radius: this.radius,
                 fill: new ol.style.Fill({
                     color: this.color
                 }),
@@ -34,7 +35,8 @@ class StyleObserver {
     }
 
     update(val) {
-        this.color = val;
+        this.color = val.color;
+        this.radius = val.radius
         this.setStyle();
     }
 }
