@@ -13,6 +13,7 @@ const map = new ol.Map({
         zoom: 4
     })
 });
+
 function startup() {
     var repo = new FeatureRepository(map);
 
