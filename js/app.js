@@ -1,3 +1,5 @@
+/// <reference path="../node_modules/@types/openlayers/index.d.ts" />
+
 var map = new ol.Map({
     target: 'map',
     layers: [
