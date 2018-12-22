@@ -6,7 +6,10 @@
 class StyleObservable {
     constructor() {
         this.color = 'blue';
-        this.radius = 5;
+        this.radius = 25;
+        this.form = 'marker';
+        this.strokeWidth = 3;
+        this.strokeColor = 'white';
         /** @type {Observer[]} */
         this.observers = [];
     }
@@ -29,9 +32,30 @@ class StyleObservable {
         this.notifyAllObservers();
     }
 
+    setForm(form) {
+        this.form = form;
+        this.notifyAllObservers();
+    }
+
+    setStrokeColor(color) {
+        this.strokeColor = color;
+        this.notifyAllObservers();
+    }
+
+    setStrokeWidth(width) {
+        this.strokeWidth = width;
+        this.notifyAllObservers();
+    }
+
     notifyAllObservers() {
-        for(let observer of this.observers) {
-            observer.update({color: this.color, radius: this.radius});
+        for (let observer of this.observers) {
+            observer.update({
+                color: this.color,
+                radius: this.radius,
+                form: this.form,
+                strokeColor: this.strokeColor,
+                strokeWidth: this.strokeWidth
+            });
         }
     }
 }
