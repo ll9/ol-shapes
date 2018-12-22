@@ -15,6 +15,11 @@
   color: white;
 }
 
+.side-drawer button {
+  width: 25px;
+  height: 25px;
+}
+
 .slider {
   -webkit-appearance: none;
   width: 100%;

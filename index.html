@@ -1,57 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="stylesheet" href="./css/app.css" />
+    <!-- jQuery -->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <!-- jQuery Spectrum-->
+    <link
+      rel="stylesheet"
+      href="http://bgrins.github.io/spectrum/spectrum.css"
+    />
+    <script src="http://bgrins.github.io/spectrum/spectrum.js"></script>
 
-<head>
-    <link rel="stylesheet" href="./css/app.css">
-<!-- jQuery -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-<!-- jQuery Spectrum-->
-<link rel="stylesheet" href="http://bgrins.github.io/spectrum/spectrum.css">
-<script src="http://bgrins.github.io/spectrum/spectrum.js"></script>
+    <!-- Openlayers -->
+    <link rel="stylesheet" href="https://openlayers.org/en/latest/css/ol.css" />
+    <script
+      type="text/javascript"
+      src="https://openlayers.org/en/latest/build/ol.js"
+    ></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL,Object.assign"></script>
 
-<!-- Openlayers -->
-<link rel="stylesheet" href="https://openlayers.org/en/latest/css/ol.css" />
-<script type="text/javascript" src="https://openlayers.org/en/latest/build/ol.js"></script>
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL,Object.assign"></script>
+    <!-- ol-ext -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/Viglino/ol-ext/master/dist/ol-ext.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.rawgit.com/Viglino/ol-ext/master/dist/ol-ext.min.js"
+    ></script>
 
-<!-- ol-ext -->
-<link rel="stylesheet" href="https://cdn.rawgit.com/Viglino/ol-ext/master/dist/ol-ext.min.css" />
-<script type="text/javascript" src="https://cdn.rawgit.com/Viglino/ol-ext/master/dist/ol-ext.min.js"></script>
+    <!-- Fontawesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
     <title>OpenLayers example</title>
-</head>
+  </head>
 
-
-<body>
+  <body>
     <h2>My Map</h2>
     <div id="map" class="map"></div>
     <div class="side-drawer">
-        <h4>Farbe</h4>
-        <input type="text" id="color-picker">
-        <br>
-        <h4>Radius</h4>
-        <input class="slider" oninput="onRadiusChanged(Number(this.value))" type="range" min="1" max="100" value="25">
-        <br>
-        <h4>Form</h4>
-        <button onclick="onFormChange('marker')">marker</button>
-        <button onclick="onFormChange('circle')">circle</button>
-        <button onclick="onFormChange('square')">square</button>
-        <button onclick="onFormChange('triangle')">triangle</button>
-        <button onclick="onFormChange('sign')">sign</button>
-        <button onclick="onFormChange('hexagon')">hexagon</button>
-        <button onclick="onFormChange('lozenge')">lozenge</button>
-        <br>
-        <h4>Rand</h4>
-        <h5>Farbe</h5>
-        <input type="text" id="stroke-color-picker">
-        <h5>Länge</h5>
-        <input class="slider" oninput="onStrokeWidthChange(Number(this.value))" type="range" min="0" max="10" value="3">
+      <h4>Farbe</h4>
+      <input type="text" id="color-picker" /> <br />
+      <h4>Radius</h4>
+      <input
+        class="slider"
+        oninput="onRadiusChanged(Number(this.value))"
+        type="range"
+        min="1"
+        max="100"
+        value="25"
+      />
+      <br />
+      <h4>Form</h4>
+      <button
+        class="fa fa-map-marker"
+        onclick="onFormChange('marker')"
+      ></button>
+      <button class="fa fa-circle" onclick="onFormChange('circle')"></button>
+      <button class="fa fa-square" onclick="onFormChange('square')"></button>
+      <button
+        class="fa fa-caret-up fa-flip-vertical"
+        onclick="onFormChange('triangle')"
+      ></button>
+      <button class="fa fa-caret-up" onclick="onFormChange('sign')"></button>
+      <button onclick="onFormChange('hexagon')">
+        <svg width="100%" viewBox="0 0 30 30"><polygon points="15 0, 30 10, 30 20, 15 30, 0 20, 0 10" /></svg>
+      </button>
+      <button onclick="onFormChange('lozenge')">
+        <i class="fa fa-square" style="transform: rotate(45deg);"></i>
+      </button>
+      <br />
+      <h4>Rand</h4>
+      <h5>Farbe</h5>
+      <input type="text" id="stroke-color-picker" />
+      <h5>Länge</h5>
+      <input
+        class="slider"
+        oninput="onStrokeWidthChange(Number(this.value))"
+        type="range"
+        min="0"
+        max="10"
+        value="3"
+      />
     </div>
-</body>
+  </body>
 
-
-<script src="./js/Repositories/FeatureRepository.js"></script>
-<script src="./js/Observables/StyleObservable.js"></script>
-<script src="./js/Observers/StyleObserver.js"></script>
-<script src="./js/app.js"></script>
-
+  <script src="./js/Repositories/FeatureRepository.js"></script>
+  <script src="./js/Observables/StyleObservable.js"></script>
+  <script src="./js/Observers/StyleObserver.js"></script>
+  <script src="./js/app.js"></script>
 </html>
