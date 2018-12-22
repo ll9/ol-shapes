@@ -4,15 +4,15 @@
 }
 
 .side-drawer {
-position: absolute;
-top: 0;
-bottom: 0;
-right: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
 
-width: 300px;
-background: rgba(0, 0, 0, 90%);
-padding: 10px;
-color: white;
+  width: 300px;
+  background: rgba(0, 0, 0, 90%);
+  padding: 10px;
+  color: white;
 }
 
 .slider {
@@ -47,4 +47,8 @@ color: white;
   border-radius: 50%;
   background: blue;
   cursor: pointer;
+}
+
+.full-spectrum .sp-palette {
+  max-width: 200px;
 }

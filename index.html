@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="./css/app.css">
 <!-- jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- jQuery Spectrum-->
+<link rel="stylesheet" href="http://bgrins.github.io/spectrum/spectrum.css">
+<script src="http://bgrins.github.io/spectrum/spectrum.js"></script>
 
 <!-- Openlayers -->
 <link rel="stylesheet" href="https://openlayers.org/en/latest/css/ol.css" />
@@ -23,11 +26,7 @@
     <div id="map" class="map"></div>
     <div class="side-drawer">
         <h4>Farbe</h4>
-        <button onclick="onColorChange('blue')">blue</button>
-        <button onclick="onColorChange('red')">red</button>
-        <button onclick="onColorChange('green')">green</button>
-        <button onclick="onColorChange('white')">white</button>
-        <button onclick="onColorChange('black')">black</button>
+        <input type="text" id="color-picker">
         <br>
         <h4>Radius</h4>
         <input class="slider" oninput="onRadiusChanged(Number(this.value))" type="range" min="1" max="100" value="25">
@@ -43,11 +42,7 @@
         <br>
         <h4>Rand</h4>
         <h5>Farbe</h5>
-        <button onclick="onStrokeColorChange('blue')">blue</button>
-        <button onclick="onStrokeColorChange('red')">red</button>
-        <button onclick="onStrokeColorChange('green')">green</button>
-        <button onclick="onStrokeColorChange('white')">white</button>
-        <button onclick="onStrokeColorChange('black')">black</button>
+        <input type="text" id="stroke-color-picker">
         <h5>Länge</h5>
         <input class="slider" oninput="onStrokeWidthChange(Number(this.value))" type="range" min="0" max="10" value="3">
     </div>
